@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Printing & Photocopy Business</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f9;
+            color: #333;
+        }
+        header {
+            background-color: #000000;
+            color: #fff;
+            padding: 1rem 0;
+            text-align: center;
+        }
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 2rem auto;
+            background: #fff;
+            padding: 1.5rem;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        h1, h2 {
+            color: #2c3e50;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 1.5rem 0;
+        }
+        table, th, td {
+            border: 1px solid #ccc;
+        }
+        th, td {
+            padding: 1rem;
+            text-align: left;
+        }
+        th {
+            background-color: #ecf0f1;
+        }
+        footer {
+            text-align: center;
+            padding: 1rem 0;
+            background-color: black;
+            color: #fff;
+            position: relative;
+            bottom: 0;
+            width: 100%;
+        }
+        .pricing {
+            text-align: center;
+            margin-top: 2rem;
+        }
+        .pricing select {
+            padding: 0.5rem;
+            font-size: 1rem;
+            margin-right: 1rem;
+        }
+        .pricing button {
+            padding: 0.5rem 1rem;
+            background-color: #27ae60;
+            color: white;
+            border: none;
+            cursor: pointer;
+            border-radius: 4px;
+        }
+        .pricing button:hover {
+            background-color: #2ecc71;
+        }
+        .social {
+            text-align: center;
+            margin: 2rem 0;
+        }
+        .social a {
+            margin: 0 1rem;
+            color: #3498db;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        .social a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Welcome to Glen's PrintSolutions</h1>
+        <p>Your one-stop shop for all printing and photocopying needs</p>
+    </header>
+
+    <div class="container">
+        <h2>Our Services</h2>
+        <ul>
+            <li>Photocopying</li>
+            <li>Color and Black & White Printing</li>
+        </ul>
+
+        <h2>Pricing</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Type</th>
+                    <th>Size</th>
+                    <th>Price</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Print with Picture</td>
+                    <td>Short</td>
+                    <td>Php 5.00</td>
+                </tr>
+                <tr>
+                    <td>Print with Picture</td>
+                    <td>A4</td>
+                    <td>Php 6.00</td>
+                </tr>
+                <tr>
+                    <td>Print with Picture</td>
+                    <td>Long</td>
+                    <td>Php 8.00</td>
+                </tr>
+                <tr>
+                    <td>Print (Text Only)</td>
+                    <td>Short</td>
+                    <td>Php 3.00</td>
+                </tr>
+                <tr>
+                    <td>Print (Text Only)</td>
+                    <td>A4</td>
+                    <td>Php 4.00</td>
+                </tr>
+                <tr>
+                    <td>Print (Text Only)</td>
+                    <td>Long</td>
+                    <td>Php 5.00</td>
+                </tr>
+                <tr>
+                    <td>Photocopy (Black and White)</td>
+                    <td>Short</td>
+                    <td>Php 3.00</td>
+                </tr>
+                <tr>
+                    <td>Photocopy (Black and White)</td>
+                    <td>A4</td>
+                    <td>Php 4.00</td>
+                </tr>
+                <tr>
+                    <td>Photocopy (Colored)</td>
+                    <td>Short</td>
+                    <td>Php 5.00</td>
+                </tr>
+                <tr>
+                    <td>Photocopy (Colored)</td>
+                    <td>A4</td>
+                    <td>Php 6.00</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <div class="pricing">
+            <h2>Calculate Your Price</h2>
+            <div id="itemsContainer">
+                <div class="item">
+                    <label for="printType1">Choose Print Type:</label>
+                    <select class="printType">
+                        <option value="5.00">Print with Picture - Short (Php 5.00)</option>
+                        <option value="6.00">Print with Picture - A4 (Php 6.00)</option>
+                        <option value="8.00">Print with Picture - Long (Php 8.00)</option>
+                        <option value="3.00">Print (Text Only) - Short (Php 3.00)</option>
+                        <option value="4.00">Print (Text Only) - A4 (Php 4.00)</option>
+                        <option value="5.00">Print (Text Only) - Long (Php 5.00)</option>
+                        <option value="3.00">Photocopy (Black and White) - Short (Php 3.00)</option>
+                        <option value="4.00">Photocopy (Black and White) - A4 (Php 4.00)</option>
+                        <option value="5.00">Photocopy (Colored) - Short (Php 5.00)</option>
+                        <option value="6.00">Photocopy (Colored) - A4 (Php 6.00)</option>
+                    </select>
+                </div>
+            </div>
+            <button onclick="addItem()">Add Another Item</button>
+            <button onclick="calculateTotalPrice()">Calculate Total</button>
+            <p id="priceOutput"></p>
+        </div>
+
+        <div class="social">
+            <h2>Follow Us</h2>
+            <p>Stay updated and message us for inquiries:</p>
+            <a href="https://web.facebook.com/glen.simbiray.2024" target="_blank">Facebook</a>
+            <a href="https://www.instagram.com/_hugo.io_/" target="_blank">Instagram</a>
+            <a href="https://www.tiktok.com/@_lenji_?lang=en" target=_blank">TikTok</a>
+            <p>Or email me at <a href="mailto:simbirayglen21@gmail.com">simbirayglen21@gmail.com</a></p>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2024 Glen's PrintSolutions. All Rights Reserved.</p>
+    </footer>
+
+    <script>
+        function addItem() {
+            const container = document.getElementById('itemsContainer');
+            const newItem = document.createElement('div');
+            newItem.classList.add('item');
+            newItem.innerHTML = `
+                <label>Choose Print Type:</label>
+                <select class="printType">
+                    <option value="5.00">Print with Picture - Short (Php 5.00)</option>
+                    <option value="6.00">Print with Picture - A4 (Php 6.00)</option>
+                    <option value="8.00">Print with Picture - Long (Php 8.00)</option>
+                    <option value="3.00">Print (Text Only) - Short (Php 3.00)</option>
+                    <option value="4.00">Print (Text Only) - A4 (Php 4.00)</option>
+                    <option value="5.00">Print (Text Only) - Long (Php 5.00)</option>
+                    <option value="3.00">Photocopy (Black and White) - Short (Php 3.00)</option>
+                    <option value="4.00">Photocopy (Black and White) - A4 (Php 4.00)</option>
+                    <option value="5.00">Photocopy (Colored) - Short (Php 5.00)</option>
+                    <option value="6.00">Photocopy (Colored) - A4 (Php 6.00)</option>
+                </select>
+            `;
+            container.appendChild(newItem);
+        }
+
+        function calculateTotalPrice() {
+            const prices = document.querySelectorAll('.printType');
+            let total = 0;
+
+            prices.forEach(select => {
+                total += parseFloat(select.value);
+            });
+
+            document.getElementById('priceOutput').textContent = `Total Price: Php ${total.toFixed(2)}`;
+        }
+    </script>
+</body>
+</html>
